@@ -16,4 +16,10 @@ Puts " Hello #{name}! You'll be assigned to room #{name.index}!"
 counter += 1
 end
  def each_with_index 
-   
+   names. each do |name|
+     Puts " Hello #{name}! You'll be assigned to room #{name.index}!"
+   end 
+   def printer
+     print batch_badge_creator 
+     print assign_rooms
+   end
