@@ -1,25 +1,28 @@
+
+attendees = ["Edsger", "Ada", "Charles", "Alan", "Grace", "Linus", "Matz"]
+
 def badge_maker(name)
-  Puts "Hello my name is #{name}."
+  "Hello, my name is #{name}."
 end
 
-def batch_badge_creator
-  badges = ["Edsger","Ada", "Charles", "Alan", "Grace", "Linus","Matz"]
- badges.each do |name|
-Puts "Hello my name is #{name}."
-end 
-
-def assign_rooms
-names = ["Edsger","Ada", "Charles", "Alan", "Grace", "Linus","Matz"]
-names.each do |name|
-  counter = 0 
-Puts " Hello #{name}! You'll be assigned to room #{name.index}!"
-counter += 1
+def batch_badge_creator(attendees)
+  attendees.map do |attendee|
+    "Hello, my name is #{attendee}."
+  end
 end
- def each_with_index 
-   names. each do |name|
-     Puts " Hello #{name}! You'll be assigned to room #{name.index}!"
-   end 
-   def printer
-     print batch_badge_creator 
-     print assign_rooms
-   end
+
+def assign_rooms(attendees)
+  attendees.each_with_index.map do |attendee, index|
+    "Hello, #{attendee}! You'll be assigned to room #{index+1}!"
+  end
+end
+
+def printer(attendees)
+  batch_badge_creator(attendees).each do |badge|
+    puts badge
+  end
+
+  assign_rooms(attendees).each do |assignment|
+    puts assignment
+  end
+end
